@@ -78,6 +78,7 @@ class SimplePie_Registry
 		'Misc' => 'SimplePie_Misc',
 		'XML_Declaration_Parser' => 'SimplePie_XML_Declaration_Parser',
 		'Parse_Date' => 'SimplePie_Parse_Date',
+		'Annotation' => 'SimplePie_Annotation',				#for annotation objects
 	);
 
 	/**

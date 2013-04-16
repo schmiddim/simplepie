@@ -307,6 +307,12 @@ define('SIMPLEPIE_NAMESPACE_RSS_10_MODULES_CONTENT', 'http://purl.org/rss/1.0/mo
  */
 define('SIMPLEPIE_NAMESPACE_RSS_20', '');
 
+
+/**
+ * Annotation Namespace
+ * 
+ */
+define ('ANNOTATION_NAMESPACE', 'http://xmlns.radikalblogger.de');
 /**
  * DC 1.0 Namespace
  */
@@ -2898,6 +2904,20 @@ class SimplePie
 						$this->data['items'][] = $this->registry->create('Item', array($this, $items[$key]));
 					}
 				}
+				
+				/*
+				 * Handling annotations
+				 * 
+				 */
+				if ($items = $this->get_channel_tags(ANNOTATION_NAMESPACE, 'annotation'))
+				{ 
+					$keys= array_keys($items);
+					foreach($keys as $key)
+					{
+						$this->data['items'][] = $this->registry->create('Annotation', array($this, $items[$key]));
+					}
+				}
+				
 			}
 		}
 
