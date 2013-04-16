@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 include_once('../autoloader.php');
-
+echo "h3llo";
 // Parse it
 $feed = new SimplePie();
 if (isset($argv[1]) && $argv[1] !== '')
